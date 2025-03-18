@@ -1,0 +1,15 @@
+﻿<!-- Themes/Generic.xaml -->
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ThirdCppWinRTAppv3">
+
+    <Style TargetType="local:CalcButton" >
+        <Setter Property="TopText" Value="TopT" />
+        <Setter Property="BottomText" Value="BottomT" />
+        <Setter Property="TopForeground" Value="White" />
+        <Setter Property="BottomForeground" Value="Blue" />
+        <Setter Property="ButtonBackground" Value="DarkGray" />
+    </Style>
+    
+</ResourceDictionary>

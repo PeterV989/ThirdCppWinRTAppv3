@@ -1,0 +1,14 @@
+namespace ThirdCppWinRTAppv3
+{
+    [default_interface]
+    runtimeclass CalcButton : Microsoft.UI.Xaml.Controls.UserControl
+    {
+        CalcButton();
+
+        String TopText;
+        String BottomText;
+        Microsoft.UI.Xaml.Media.Brush ButtonBackground;
+        Microsoft.UI.Xaml.Media.Brush TopForeground;
+        Microsoft.UI.Xaml.Media.Brush BottomForeground;
+    }
+}

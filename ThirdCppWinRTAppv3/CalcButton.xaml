@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<UserControl
+    x:Class="ThirdCppWinRTAppv3.CalcButton"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ThirdCppWinRTAppv3"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <UserControl.Resources>
+        
+    </UserControl.Resources>
+
+    <StackPanel x:Name="CalcButton" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+        <Button x:Name="myButton" Click="myButton_Click" Background="{x:Bind ButtonBackground, Mode=OneWay}">
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <TextBlock x:Name="Top" Text="{x:Bind TopText, Mode=OneWay}" Foreground="{x:Bind TopForeground, Mode=OneWay}" />
+                <TextBlock x:Name="Bottom" Text="{x:Bind BottomText, Mode=OneWay}" Foreground="{x:Bind BottomForeground, Mode=OneWay}" />
+            </StackPanel>
+        </Button>
+    </StackPanel>
+</UserControl>
