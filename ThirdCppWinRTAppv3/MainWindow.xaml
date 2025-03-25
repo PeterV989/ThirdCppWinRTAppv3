@@ -3,15 +3,87 @@
     x:Class="ThirdCppWinRTAppv3.MainWindow"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:ThirdCppWinRTAppv3"
+    xmlns:l="using:ThirdCppWinRTAppv3"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d"
-    Title="ThirdCppWinRTAppv3">
+    Title="HP16C Calculator"
+    mc:Ignorable="d">
 
-    <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
-        <Button x:Name="myButton" Click="myButton_Click">Click Me</Button>
-        <local:CalcButton TopText="Button Top" BottomText="Button Bottom" TopForeground="White" BottomForeground="Blue">
-        </local:CalcButton>
-    </StackPanel>
+    <Grid x:Name="CalcGrid" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="20"  />
+            <RowDefinition Height="60" />
+            <RowDefinition Height="20" />
+            <RowDefinition Height="60" />
+            <RowDefinition Height="20" />
+            <RowDefinition Height="60" />
+            <RowDefinition Height="20" />
+            <RowDefinition Height="60" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="80" />
+            <ColumnDefinition Width="80" />
+            <ColumnDefinition Width="80" />
+            <ColumnDefinition Width="80" />
+            <ColumnDefinition Width="80" />
+            <ColumnDefinition Width="80" />
+            <ColumnDefinition Width="80" />
+            <ColumnDefinition Width="80" />
+            <ColumnDefinition Width="80" />
+            <ColumnDefinition Width="80" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <TextBlock Foreground="#FFE1A600" VerticalAlignment="Bottom" HorizontalAlignment="Center" Grid.Row="1" Grid.Column="1">SL</TextBlock>
+        <TextBlock Foreground="#FFE1A600" VerticalAlignment="Bottom" HorizontalAlignment="Center" Grid.Row="1" Grid.Column="2">SJ</TextBlock>
+        <TextBlock Foreground="#FFE1A600" VerticalAlignment="Bottom" HorizontalAlignment="Center" Grid.Row="1" Grid.Column="3">RL</TextBlock>
+        <TextBlock Foreground="#FFE1A600" VerticalAlignment="Bottom" HorizontalAlignment="Center" Grid.Row="1" Grid.Column="4">RR</TextBlock>
+        <TextBlock Foreground="#FFE1A600" VerticalAlignment="Bottom" HorizontalAlignment="Center" Grid.Row="1" Grid.Column="5">RLn</TextBlock>
+        <TextBlock Foreground="#FFE1A600" VerticalAlignment="Bottom" HorizontalAlignment="Center" Grid.Row="1" Grid.Column="6">RRn</TextBlock>
+        <TextBlock Foreground="#FFE1A600" VerticalAlignment="Bottom" HorizontalAlignment="Center" Grid.Row="1" Grid.Column="7">MASKL</TextBlock>
+        <TextBlock Foreground="#FFE1A600" VerticalAlignment="Bottom" HorizontalAlignment="Center" Grid.Row="1" Grid.Column="8">MASKR</TextBlock>
+        <TextBlock Foreground="#FFE1A600" VerticalAlignment="Bottom" HorizontalAlignment="Center" Grid.Row="1" Grid.Column="9">RMD</TextBlock>
+        <TextBlock Foreground="#FFE1A600" VerticalAlignment="Bottom" HorizontalAlignment="Center" Grid.Row="1" Grid.Column="10">XOR</TextBlock>
+        <l:CalcButton x:Name="A_LJ" TopText="A" BottomText="LJ" Grid.Row="2" Grid.Column="1" />
+        <l:CalcButton x:Name="B_ASR" TopText="B" BottomText="ASR" Grid.Row="2" Grid.Column="2"  />
+        <l:CalcButton x:Name="C_RLC" TopText="C" BottomText="RLC" Grid.Row="2" Grid.Column="3"  />
+        <l:CalcButton x:Name="D_RRC" TopText="D" BottomText="RRC" Grid.Row="2" Grid.Column="4"  />
+        <l:CalcButton x:Name="E_RLCn" TopText="E" BottomText="RLCn&#x0329;" Grid.Row="2" Grid.Column="5"  HorizontalAlignment="Stretch" />
+        <l:CalcButton x:Name="F_RRCn" TopText="F" BottomText="RRCn&#x0329;" Grid.Row="2" Grid.Column="6"  />
+        <l:CalcButton x:Name="_7_B" TopText="7" BottomText="#B" Grid.Row="2" Grid.Column="7"  />
+        <l:CalcButton x:Name="_8_ABS" TopText="8" BottomText="ABS" Grid.Row="2" Grid.Column="8"  />
+        <l:CalcButton x:Name="_9_DBLR" TopText="9" BottomText="DBLR" Grid.Row="2" Grid.Column="9" />
+        <l:CalcButton x:Name="div_DBLdiv" TopText="÷" BottomText="DBL÷" Grid.Row="2" Grid.Column="10" />
+        <l:CalcButton x:Name="GSB_RTN" TopText="GSB" BottomText="RTN" Grid.Row="4" Grid.Column="1" />
+        <l:CalcButton x:Name="GTO_LBL" TopText="GTO" BottomText="LBL" Grid.Row="4" Grid.Column="2" />
+        <l:CalcButton x:Name="HEX_DSZ" TopText="HEX" BottomText="DSZ" Grid.Row="4" Grid.Column="3" />
+        <l:CalcButton x:Name="DEC_ISZ" TopText="DEC" BottomText="ISZ" Grid.Row="4" Grid.Column="4" />
+        <l:CalcButton x:Name="OCT_SQR" TopText="OCT" BottomText="&#x221A;X&#x0305;" Grid.Row="4" Grid.Column="5" />
+        <l:CalcButton x:Name="BIN_INV" TopText="BIN" BottomText="¹⁄ₓ" Grid.Row="4" Grid.Column="6" />
+        <l:CalcButton x:Name="_4_SF" TopText="4" BottomText="SF" Grid.Row="4" Grid.Column="7" />
+        <l:CalcButton x:Name="_5_CF" TopText="5" BottomText="CF" Grid.Row="4" Grid.Column="8" />
+        <l:CalcButton x:Name="_6_Fq" TopText="6" BottomText="F?" Grid.Row="4" Grid.Column="9" />
+        <l:CalcButton x:Name="mul_DBLmul" TopText="×" BottomText="DBL×" Grid.Row="4" Grid.Column="10" />
+        <l:CalcButton x:Name="RS_PR" TopText="R/S" BottomText="P/R" Grid.Row="6" Grid.Column="1" />
+        <l:CalcButton x:Name="SST_BST" TopText="SST" BottomText="BST" Grid.Row="6" Grid.Column="2" />
+        <l:CalcButton x:Name="RDN_RUP" TopText="R↓" BottomText="R↑" Grid.Row="6" Grid.Column="3" />
+        <l:CalcButton x:Name="XCHG_PSE" TopText="x≷y" BottomText="PSE" Grid.Row="6" Grid.Column="4" />
+        <l:CalcButton x:Name="BSP_CLx" TopText="BSP" BottomText="CLx" Grid.Row="6" Grid.Column="5" />
+        <l:CalcButton x:Name="ENTER_LSTx" TopText="E&#x2028;N&#x2028;T&#x2028;E&#x2028;R" BottomText="LSTx" VerticalAlignment="Stretch" Grid.Row="6" Grid.Column="6" Grid.RowSpan="3" />
+        <l:CalcButton x:Name="_1_xLEy" TopText="1" BottomText="x≼y" Grid.Row="6" Grid.Column="7" />
+        <l:CalcButton x:Name="_2_xLT0" TopText="2" BottomText="x≺0" Grid.Row="6" Grid.Column="8" />
+        <l:CalcButton x:Name="_3_xGTy" TopText="3" BottomText="x≻y" Grid.Row="6" Grid.Column="9" />
+        <l:CalcButton x:Name="MINUS_xGT0" TopText="−" BottomText="x≻0" Grid.Row="6" Grid.Column="10" />
+        <l:CalcButton x:Name="ON" TopText="ON" BottomText="" Grid.Row="8" Grid.Column="1" />
+        <l:CalcButton x:Name="f" TopText="f" BottomText="" ButtonBackground="#58adc9" TopForeground="#413D3C" Grid.Row="8" Grid.Column="2" />
+        <l:CalcButton x:Name="g" TopText="g" BottomText="" ButtonBackground="#FFE1A600" TopForeground="#413D3C" Grid.Row="8" Grid.Column="3" />
+        <l:CalcButton x:Name="STO_LT" TopText="STO" BottomText="≺" Grid.Row="8" Grid.Column="4" />
+        <l:CalcButton x:Name="RCL_GT" TopText="RCL" BottomText="≻" Grid.Row="8" Grid.Column="5" />
+        <l:CalcButton x:Name="_0_xNEy" TopText="0" BottomText="x≠y" Grid.Row="8" Grid.Column="7" />
+        <l:CalcButton x:Name="PERIOD_xNE0" TopText="." BottomText="x≠0" Grid.Row="8" Grid.Column="8" />
+        <l:CalcButton x:Name="CHS_xEQy" TopText="CHS" BottomText="x=y" Grid.Row="8" Grid.Column="9" />
+        <l:CalcButton x:Name="PLUS_xEQ0" TopText="+" BottomText="x=0" Grid.Row="8" Grid.Column="10" />
+    </Grid>
 </Window>

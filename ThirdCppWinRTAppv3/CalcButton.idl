@@ -5,10 +5,24 @@ namespace ThirdCppWinRTAppv3
     {
         CalcButton();
 
+        // Dependency Properties
+        static Microsoft.UI.Xaml.DependencyProperty TopTextProperty{ get; };
+        static Microsoft.UI.Xaml.DependencyProperty BottomTextProperty{ get; };
+        static Microsoft.UI.Xaml.DependencyProperty TopForegroundProperty{ get; };
+        static Microsoft.UI.Xaml.DependencyProperty BottomForegroundProperty{ get; };
+        static Microsoft.UI.Xaml.DependencyProperty TopFontWeightProperty{ get; };
+        static Microsoft.UI.Xaml.DependencyProperty BottomFontWeightProperty{ get; };
+        static Microsoft.UI.Xaml.DependencyProperty ButtonBackgroundProperty{ get; };
+
+        // Regular Properties (using the same names as in your C++ code)
         String TopText;
         String BottomText;
         Microsoft.UI.Xaml.Media.Brush ButtonBackground;
         Microsoft.UI.Xaml.Media.Brush TopForeground;
         Microsoft.UI.Xaml.Media.Brush BottomForeground;
+        Windows.UI.Text.FontWeight TopFontWeight;
+        Windows.UI.Text.FontWeight BottomFontWeight;
+
+        //event Windows.Foundation.TypedEventHandler<CalcButton, Windows.UI.Xaml.RoutedEventArgs> MyCalcButtonClicked;
     }
 }

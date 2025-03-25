@@ -6,16 +6,12 @@ namespace winrt::ThirdCppWinRTAppv3::implementation
 {
     struct MainWindow : MainWindowT<MainWindow>
     {
-        MainWindow()
-        {
-            // Xaml objects should not call InitializeComponent during construction.
-            // See https://github.com/microsoft/cppwinrt/tree/master/nuget#initializecomponent
-        }
-
-        int32_t MyProperty();
-        void MyProperty(int32_t value);
-
-        void myButton_Click(IInspectable const& sender, Microsoft::UI::Xaml::RoutedEventArgs const& args);
+        MainWindow();
+        void OnCalcButtonClicked(ThirdCppWinRTAppv3::CalcButton const& sender, winrt::Windows::UI::Xaml::RoutedEventArgs const&);
+    protected:
+        void OnMainWindowLoaded(winrt::Windows::Foundation::IInspectable const&, winrt::Microsoft::UI::Xaml::RoutedEventArgs const&);
+    private:
+        bool m_isFKeyPressed{ false };
     };
 }
 

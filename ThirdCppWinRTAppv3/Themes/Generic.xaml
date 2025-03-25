@@ -5,11 +5,11 @@
     xmlns:local="using:ThirdCppWinRTAppv3">
 
     <Style TargetType="local:CalcButton" >
-        <Setter Property="TopText" Value="TopT" />
-        <Setter Property="BottomText" Value="BottomT" />
-        <Setter Property="TopForeground" Value="White" />
-        <Setter Property="BottomForeground" Value="Blue" />
-        <Setter Property="ButtonBackground" Value="DarkGray" />
+        <Setter Property="ButtonBackground" Value="#FF413D3C" />
+        <Setter Property="TopForeground" Value="#FFFFFFFF" />
+        <Setter Property="BottomFontWeight" Value="Normal" />
+        <Setter Property="BottomForeground" Value="#FF58ADC9" />
+        <Setter Property="TopFontWeight" Value="Bold" />
     </Style>
-    
+
 </ResourceDictionary>
