@@ -23,12 +23,14 @@ namespace winrt::ThirdCppWinRTAppv3::implementation
 		}
 	}
 
-	void MainWindow::OnCalcButtonClicked(ThirdCppWinRTAppv3::CalcButton const& sender, winrt::Windows::UI::Xaml::RoutedEventArgs const& /* args */)
+	void MainWindow::OnCalcButtonClicked(ThirdCppWinRTAppv3::CalcButton const& sender, winrt::Microsoft::UI::Xaml::RoutedEventArgs const& /* args */)
 	{
 		ThirdCppWinRTAppv3::CalcButton clickedButton = sender.try_as<ThirdCppWinRTAppv3::CalcButton>();
 
 		if (clickedButton) {
 			hstring name = clickedButton.Name();
+			std::wstringstream ss;
+
 			OutputDebugStringW(name.c_str());
 			if (name == L"f")
 			{

@@ -23,6 +23,6 @@ namespace ThirdCppWinRTAppv3
         Windows.UI.Text.FontWeight TopFontWeight;
         Windows.UI.Text.FontWeight BottomFontWeight;
 
-        //event Windows.Foundation.TypedEventHandler<CalcButton, Windows.UI.Xaml.RoutedEventArgs> MyCalcButtonClicked;
+        event Windows.Foundation.TypedEventHandler<CalcButton, Microsoft.UI.Xaml.RoutedEventArgs> MyCalcButtonClicked;
     }
 }

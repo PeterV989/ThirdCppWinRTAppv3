@@ -66,15 +66,15 @@ namespace winrt::ThirdCppWinRTAppv3::implementation
 		m_clickToken(*this, args);
 	}
 
-	//winrt::event_token CalcButton::MyCalcButtonClicked(winrt::Windows::Foundation::TypedEventHandler<ThirdCppWinRTAppv3::CalcButton, winrt::Windows::UI::Xaml::RoutedEventArgs> const& handler)
-	//{
-	//	return m_clickToken.add(handler);
-	//}
+	winrt::event_token CalcButton::MyCalcButtonClicked(winrt::Windows::Foundation::TypedEventHandler<ThirdCppWinRTAppv3::CalcButton, winrt::Microsoft::UI::Xaml::RoutedEventArgs> const& handler)
+	{
+		return m_clickToken.add(handler);
+	}
 
-	//void CalcButton::MyCalcButtonClicked(winrt::event_token const& token) noexcept
-	//{
-	//	m_clickToken.remove(token);
-	//}
+	void CalcButton::MyCalcButtonClicked(winrt::event_token const& token) noexcept
+	{
+		m_clickToken.remove(token);
+	}
 
 	winrt::Microsoft::UI::Xaml::Media::Brush CalcButton::m_buttonBackgroundBrush = nullptr;
 

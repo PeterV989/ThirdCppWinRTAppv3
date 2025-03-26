@@ -48,10 +48,10 @@ namespace winrt::ThirdCppWinRTAppv3::implementation
 
         //void myButton_Click(IInspectable const&, winrt::Windows::UI::Xaml::RoutedEventArgs const&);
 
-        //winrt::event_token MyCalcButtonClicked(winrt::Windows::Foundation::TypedEventHandler<ThirdCppWinRTAppv3::CalcButton, winrt::Windows::UI::Xaml::RoutedEventArgs> const&);
-        //void MyCalcButtonClicked(winrt::event_token const& token) noexcept;
+        winrt::event_token MyCalcButtonClicked(winrt::Windows::Foundation::TypedEventHandler<ThirdCppWinRTAppv3::CalcButton, winrt::Microsoft::UI::Xaml::RoutedEventArgs> const&);
+        void MyCalcButtonClicked(winrt::event_token const& token) noexcept;
         winrt::event<winrt::Windows::Foundation::TypedEventHandler<ThirdCppWinRTAppv3::CalcButton, winrt::Microsoft::UI::Xaml::RoutedEventArgs>> m_clickToken;
-       void MyCalcButton_Click([[maybe_unused]] IInspectable const& sender, winrt::Microsoft::UI::Xaml::RoutedEventArgs const& args);
+        void MyCalcButton_Click([[maybe_unused]] IInspectable const& sender, winrt::Microsoft::UI::Xaml::RoutedEventArgs const& args);
 
         winrt::Microsoft::UI::Xaml::Media::Brush m_buttonBackground{ nullptr };
         winrt::hstring m_topText;
