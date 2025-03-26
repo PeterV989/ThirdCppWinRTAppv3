@@ -18,6 +18,26 @@
 
     <Button x:Name="CalcButton" Click="MyCalcButton_Click" Background="{x:Bind ButtonBackground, Mode=OneWay}"
             HorizontalAlignment="Center" VerticalAlignment="Stretch" Width="60" MinHeight="60">
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:Name="CommonGroups">
+                <VisualState x:Name="Normal" />
+                <VisualState x:Name="PointerOver">
+                    <VisualState.Setters>
+                        <Setter Target="CalcButton.Background" Value="{x:Bind PointerOverColor, Mode=OneWay}" />
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState x:Name="Pressed" >
+                    <VisualState.Setters>
+                        <Setter Target="CalcButton.Background" Value="{x:Bind PressedColor, Mode=OneWay}" />
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState x:Name="Disabled" >
+                    <VisualState.Setters>
+                        <Setter Target="CalcButton.Background" Value="{x:Bind DisabledColor, Mode=OneTime}" />
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
         <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Stretch">
             <TextBlock x:Name="Top" Text="{x:Bind TopText, Mode=OneWay}"
                        HorizontalAlignment="Center"

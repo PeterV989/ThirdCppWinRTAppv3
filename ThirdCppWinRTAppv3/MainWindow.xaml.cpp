@@ -25,13 +25,14 @@ namespace winrt::ThirdCppWinRTAppv3::implementation
 
 	void MainWindow::OnCalcButtonClicked(ThirdCppWinRTAppv3::CalcButton const& sender, winrt::Microsoft::UI::Xaml::RoutedEventArgs const& /* args */)
 	{
-		ThirdCppWinRTAppv3::CalcButton clickedButton = sender.try_as<ThirdCppWinRTAppv3::CalcButton>();
+		ThirdCppWinRTAppv3::CalcButton clickedButton = sender;
 
 		if (clickedButton) {
 			hstring name = clickedButton.Name();
 			std::wstringstream ss;
-
-			OutputDebugStringW(name.c_str());
+			ss << L"Button name: " << name << std::endl;
+			std::wstring dbgout = ss.str();
+			OutputDebugStringW(dbgout.c_str());
 			if (name == L"f")
 			{
 				for (auto const& cb : CalcGrid().Children())

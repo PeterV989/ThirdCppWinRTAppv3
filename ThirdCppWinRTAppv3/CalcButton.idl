@@ -13,6 +13,9 @@ namespace ThirdCppWinRTAppv3
         static Microsoft.UI.Xaml.DependencyProperty TopFontWeightProperty{ get; };
         static Microsoft.UI.Xaml.DependencyProperty BottomFontWeightProperty{ get; };
         static Microsoft.UI.Xaml.DependencyProperty ButtonBackgroundProperty{ get; };
+        static Microsoft.UI.Xaml.DependencyProperty PointerOverColorProperty{ get; };
+        static Microsoft.UI.Xaml.DependencyProperty PressedColorProperty{ get; };
+        static Microsoft.UI.Xaml.DependencyProperty DisabledColorProperty{ get; };
 
         // Regular Properties (using the same names as in your C++ code)
         String TopText;
@@ -22,6 +25,9 @@ namespace ThirdCppWinRTAppv3
         Microsoft.UI.Xaml.Media.Brush BottomForeground;
         Windows.UI.Text.FontWeight TopFontWeight;
         Windows.UI.Text.FontWeight BottomFontWeight;
+        Microsoft.UI.Xaml.Media.Brush PointerOverColor;
+        Microsoft.UI.Xaml.Media.Brush PressedColor;
+        Microsoft.UI.Xaml.Media.Brush DisabledColor;
 
         event Windows.Foundation.TypedEventHandler<CalcButton, Microsoft.UI.Xaml.RoutedEventArgs> MyCalcButtonClicked;
     }
