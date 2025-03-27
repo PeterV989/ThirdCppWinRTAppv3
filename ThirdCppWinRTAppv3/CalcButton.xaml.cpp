@@ -35,25 +35,6 @@ namespace winrt::ThirdCppWinRTAppv3::implementation
 		m_propertyChanged.remove(t);
 	}
 
-	//void CalcButton::OnPropertyChanged(winrt::Microsoft::UI::Xaml::DependencyObject const& d, winrt::Microsoft::UI::Xaml::DependencyPropertyChangedEventArgs const& e)
-	//{
-	//	if (auto control = d.try_as<winrt::ThirdCppWinRTAppv3::CalcButton>())
-	//	{
-	//		if (e.Property() == CalcButton::ButtonBackgroundProperty())
-	//		{
-	//			control.ButtonBackground(e.NewValue().as<winrt::Microsoft::UI::Xaml::Media::Brush>());
-	//		}
-	//		else if (e.Property() == CalcButton::TopTextProperty())
-	//		{
-	//			control.TopText(e.NewValue().as<hstring>());
-	//		}
-	//		else if (e.Property() == CalcButton::TopForegroundProperty())
-	//		{
-	//			control.TopForeground(e.NewValue().as<winrt::Microsoft::UI::Xaml::Media::Brush>());
-	//		}
-	//	}
-	//} 
-
 	void CalcButton::MyCalcButton_Click([[maybe_unused]] winrt::Windows::Foundation::IInspectable const& sender, winrt::Microsoft::UI::Xaml::RoutedEventArgs const& args)
 	{
 		const char* typeName = typeid(sender).name();
@@ -123,7 +104,7 @@ namespace winrt::ThirdCppWinRTAppv3::implementation
 			L"TopForeground",
 			winrt::xaml_typename<winrt::Microsoft::UI::Xaml::Media::Brush>(),
 			winrt::xaml_typename<winrt::ThirdCppWinRTAppv3::CalcButton>(),
-			winrt::Microsoft::UI::Xaml::PropertyMetadata{ nullptr, winrt::Microsoft::UI::Xaml::PropertyChangedCallback{ &CalcButton::OnTopForegroundPropertyChanged } }
+			winrt::Microsoft::UI::Xaml::PropertyMetadata{ nullptr, winrt::Microsoft::UI::Xaml::PropertyChangedCallback{ &CalcButton::OnTopForegroundChanged } }
 		);
 
 	winrt::Microsoft::UI::Xaml::DependencyProperty CalcButton::m_bottomForegroundProperty =
@@ -185,7 +166,7 @@ namespace winrt::ThirdCppWinRTAppv3::implementation
 		return m_buttonBackgroundProperty;
 	}
 
-	hstring CalcButton::TopText()
+	hstringCalcButton::TopText()
 	{
 		return winrt::unbox_value<hstring>(GetValue(m_topTextProperty));
 	}
@@ -203,7 +184,7 @@ namespace winrt::ThirdCppWinRTAppv3::implementation
 	{
 	    if (auto control = d.try_as<winrt::ThirdCppWinRTAppv3::CalcButton>())
 	    {
-	        control.TopText(winrt::unbox_value<hstring>(e.NewValue()));
+	        control.TopText(e.NewValue().as<hstring>());
 	    }
 	}
 
@@ -286,14 +267,13 @@ namespace winrt::ThirdCppWinRTAppv3::implementation
 			SetValue(BottomTextProperty(), winrt::box_value(value));
 			m_bottomText = value;
 		}
-
 	}
 
 	void CalcButton::OnBottomTextChanged(winrt::Microsoft::UI::Xaml::DependencyObject const& d, winrt::Microsoft::UI::Xaml::DependencyPropertyChangedEventArgs const& e)
 	{
 		if (auto control = d.try_as<winrt::ThirdCppWinRTAppv3::CalcButton>())
 		{
-			control.BottomText(winrt::unbox_value<hstring>(e.NewValue()));
+			control.BottomText(e.NewValue().as<hstring>());
 		}
 	}
 
@@ -386,9 +366,9 @@ namespace winrt::ThirdCppWinRTAppv3::implementation
 		}
 	}
 
-	winrt::Microsoft::UI::Xaml::DependencyProperty CalcButton::PressedColorProperty()
+	winrt::Microsoft::UI::Xaml::DependencyProperty CalcButton::PointerOverColorProperty()
 	{
-		return m_pressedColorProperty;
+		return m_pointerOverColorProperty;
 	}
 
 	winrt::Microsoft::UI::Xaml::Media::Brush CalcButton::PressedColor()
@@ -396,7 +376,7 @@ namespace winrt::ThirdCppWinRTAppv3::implementation
 		return GetValue(m_pressedColorProperty).as<winrt::Microsoft::UI::Xaml::Media::Brush>();
 	}
 
-	void CalcButton::BottomForeground(winrt::Microsoft::UI::Xaml::Media::Brush const& value)
+	void CalcButton::PressedColor(winrt::Microsoft::UI::Xaml::Media::Brush const& value)
 	{
 		if (value != m_pressedColor)
 		{
@@ -444,6 +424,4 @@ namespace winrt::ThirdCppWinRTAppv3::implementation
 	{
 		return m_disabledColorProperty;
 	}
-
-
 }

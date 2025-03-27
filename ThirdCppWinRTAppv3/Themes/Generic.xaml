@@ -6,10 +6,13 @@
 
     <Style TargetType="local:CalcButton" >
         <Setter Property="ButtonBackground" Value="#FF413D3C" />
-        <Setter Property="TopForeground" Value="#FFFFFFFF" />
+        <Setter Property="TopForeground" Value="#FFFF0000" />
         <Setter Property="BottomFontWeight" Value="Normal" />
         <Setter Property="BottomForeground" Value="#FF58ADC9" />
         <Setter Property="TopFontWeight" Value="Bold" />
+        <!--<Setter Property="PointerOverColor" Value="#FF312C2C" />-->
+        <Setter Property="PointerOverColor" Value="#FFFFFFFF" />
+
     </Style>
 
 </ResourceDictionary>

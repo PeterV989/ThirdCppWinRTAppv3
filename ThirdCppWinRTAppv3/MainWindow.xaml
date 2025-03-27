@@ -77,8 +77,8 @@
         <l:CalcButton x:Name="_3_xGTy" TopText="3" BottomText="x≻y" Grid.Row="6" Grid.Column="9" />
         <l:CalcButton x:Name="MINUS_xGT0" TopText="−" BottomText="x≻0" Grid.Row="6" Grid.Column="10" />
         <l:CalcButton x:Name="ON" TopText="ON" BottomText="" Grid.Row="8" Grid.Column="1" />
-        <l:CalcButton x:Name="f" TopText="f" BottomText="" ButtonBackground="#FF58adc9" TopForeground="#FF413D3C" Grid.Row="8" Grid.Column="2" />
-        <l:CalcButton x:Name="g" TopText="g" BottomText="" ButtonBackground="#FFE1A600" TopForeground="#FF413D3C" Grid.Row="8" Grid.Column="3" />
+        <l:CalcButton x:Name="f" TopText="f" BottomText="" ButtonBackground="#FF58adc9" PointerOverColor="#ff489db9" TopForeground="#FF413D3C" Grid.Row="8" Grid.Column="2" />
+        <l:CalcButton x:Name="g" TopText="g" BottomText="" ButtonBackground="#FFE1A600" PointerOverColor="#ffd19600" TopForeground="#FF413D3C" Grid.Row="8" Grid.Column="3" />
         <l:CalcButton x:Name="STO_LT" TopText="STO" BottomText="≺" Grid.Row="8" Grid.Column="4" />
         <l:CalcButton x:Name="RCL_GT" TopText="RCL" BottomText="≻" Grid.Row="8" Grid.Column="5" />
         <l:CalcButton x:Name="_0_xNEy" TopText="0" BottomText="x≠y" Grid.Row="8" Grid.Column="7" />

@@ -16,8 +16,7 @@
         </ResourceDictionary>
     </UserControl.Resources>
 
-    <Button x:Name="CalcButton" Click="MyCalcButton_Click" Background="{x:Bind ButtonBackground, Mode=OneWay}"
-            HorizontalAlignment="Center" VerticalAlignment="Stretch" Width="60" MinHeight="60">
+    <StackPanel x:Name="CalcButton">
         <VisualStateManager.VisualStateGroups>
             <VisualStateGroup x:Name="CommonGroups">
                 <VisualState x:Name="Normal" />
@@ -38,14 +37,17 @@
                 </VisualState>
             </VisualStateGroup>
         </VisualStateManager.VisualStateGroups>
-        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Stretch">
-            <TextBlock x:Name="Top" Text="{x:Bind TopText, Mode=OneWay}"
+        <Button x:Name="InnerButton" Click="MyCalcButton_Click" Background="{x:Bind ButtonBackground, Mode=OneWay}"
+            HorizontalAlignment="Center" VerticalAlignment="Stretch" Width="60" MinHeight="60">
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Stretch">
+                <TextBlock x:Name="Top" Text="{x:Bind TopText, Mode=OneWay}"
                        HorizontalAlignment="Center"
                            Foreground="{x:Bind TopForeground, Mode=OneWay}"
                            FontWeight="{x:Bind TopFontWeight, Mode=OneWay}" />
-            <TextBlock x:Name="Bottom" Text="{x:Bind BottomText, Mode=OneWay}"
+                <TextBlock x:Name="Bottom" Text="{x:Bind BottomText, Mode=OneWay}"
                            Foreground="{x:Bind BottomForeground, Mode=OneWay}"
                            FontWeight="{x:Bind BottomFontWeight, Mode=OneWay}" />
-        </StackPanel>
-    </Button>
+            </StackPanel>
+        </Button>
+    </StackPanel>
 </UserControl>
